@@ -17,6 +17,14 @@ function defaultGridClear() {
         squares.remove();
     })
 }
+
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
 function gridDraw(num) {
     console.log(gridGenerate);
  num = (gridGenerate * gridGenerate);
@@ -45,7 +53,7 @@ let flexBase = 100/gridGenerate;
     const clearGrid = document.getElementById('cleargrid');
     squareUserEl.forEach((squares) => {
     squares.addEventListener('mouseover', () => {
-        squares.style.backgroundColor = 'red';
+        squares.style.backgroundColor = getRandomColor();
     })
     clearGrid.addEventListener('click', () => {
     squares.style.backgroundColor = 'dodgerblue'
@@ -94,6 +102,7 @@ function gridPrompt() {
 }
 
 };
+
 
 
 
